@@ -1,4 +1,6 @@
 # Asynq Monitoring
+![alt text](https://github.com/krobus00/asynqmon-multi-service/blob/master/assets/list_services.png?raw=true)
+
 
 ## Setup
 Copy config.yml.example to config.yml
@@ -28,4 +30,16 @@ make run dev server
 for production env you can use
 ```bash
 make run server
+```
+
+## Run in docker
+Start docker container with this command
+```bash
+docker run -d -v "$(pwd)"/config.yml:/config.yml:ro -p 5000:5000 --name asynqmon-multi-service krobus00/asynqmon-multi-service:v0.1.0
+```
+
+Stop docker container with this command
+```bash
+docker stop asynqmon-multi-service 
+docker rm asynqmon-multi-service
 ```
