@@ -1,0 +1,10 @@
+env: "development"
+log_level: "info" # info|warm|error
+ports:
+  http: "5000"
+monitoring_path: '/monitoring'
+services:
+  - name: 'product-service-worker'
+    redis_host: 'redis://localhost/1'
+  - name: 'storage-service-server'
+    redis_host: 'redis://localhost/2'
